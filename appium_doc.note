@@ -1,0 +1,27 @@
+docs/en/about-appium/intro.md
+#NOT do anything to be-tested APP
+using vendor-provided automation frameworks under the hood. That way, we don't need to compile in any Appium-specific or third-party code or frameworks to your app. This means you're testing the same app you're shipping. The vendor-provided frameworks we use are:
+
+#NOT locked into a specific lang & framework
+wrapping the vendor-provided frameworks in one API, the WebDriver API. WebDriver (aka "Selenium WebDriver") specifies a client-server protocol (known as the JSON Wire Protocol). 
+Given this client-server architecture, a client written in any language can be used to send the appropriate HTTP requests to the server. There are already clients written in every popular programming language. This also means that you're free to use whatever test runner and test framework you want; the client libraries are simply HTTP clients and can be mixed into your code any way you please. In other words, Appium & WebDriver clients are not technically "test frameworks" -- they are "automation libraries". 
+
+Appium is at its heart a webserver that exposes a REST API.
+we can write our test code in any language that has a http client API, but it is easier to use one of the Appium client libraries. We can put the server on a different machine than our tests are running on. We can write test code and rely on a cloud service like Sauce Labs to receive and interpret the commands.
+
+Session & Desired Capabilities
+
+There are client libraries (in Java, Ruby, Python, PHP, JavaScript, and C#) which support Appium's extensions to the WebDriver protocol. When using Appium, you want to use these client libraries instead of your regular WebDriver client. 
+
+#NOT reinvent the wheel
+WebDriver has become the de facto standard for automating web browsers, and is a W3C Working Draft. we have extended the protocol with extra API methods useful for mobile automation.
+
+----------------------Appium Python Client
+
+An extension library for adding Selenium 3.0 draft and Mobile JSON Wire Protocol Specification draft functionality to the Python language bindings, for use with the mobile testing framework Appium.
+
+
+The majority of the usage remains as it has been for Selenium 2 (WebDriver), and as the official Selenium Python bindings begins to implement the new specification that implementation will be used underneath, so test code can be written that is utilizable with both bindings.
+
+
+

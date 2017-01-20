@@ -1,0 +1,51 @@
+20170110
+1. dl from bcm site
+hybrid-v35_64-nodebug-pcoem-6_30_223_271.tar.gz
+
+2. make --unexpectedly ok
+KBUILD_NOPEDANTIC=1 make -C /lib/modules/`uname -r`/build M=`pwd`
+make[1]: Entering directory '/usr/src/linux-headers-4.4.0-21-generic'
+CFG80211 API is prefered for this kernel version
+Using CFG80211 API
+  LD      /home/hjh/driver/built-in.o
+  CC [M]  /home/hjh/driver/src/shared/linux_osl.o
+  CC [M]  /home/hjh/driver/src/wl/sys/wl_linux.o
+  CC [M]  /home/hjh/driver/src/wl/sys/wl_iw.o
+  CC [M]  /home/hjh/driver/src/wl/sys/wl_cfg80211_hybrid.o
+  LD [M]  /home/hjh/driver/wl.o
+  Building modules, stage 2.
+CFG80211 API is prefered for this kernel version
+Using CFG80211 API
+  MODPOST 1 modules
+  CC      /home/hjh/driver/wl.mod.o
+  LD [M]  /home/hjh/driver/wl.ko
+make[1]: Leaving directory '/usr/src/linux-headers-4.4.0-21-generic'
+
+3. lspci --should be 1st to do
+04:00.0 Network controller: Broadcom Corporation BCM4312 802.11b/g LP-PHY (rev 01)
+
+4. make install ; insmod wl.ko
+install -D -m 755 wl.ko /lib/modules/`uname -r`/kernel/drivers/net/wireless
+but nothing happens.
+
+5. continue
+root@hjh:/home/hjh# lsmod |grep -e b43 -e ssb -e wl
+b43                   417792  0
+bcma                   53248  1 b43
+mac80211              737280  1 b43
+cfg80211              565248  2 b43,mac80211
+ssb                    65536  1 b43
+
+root@hjh:/home/hjh# vi /etc/modprobe.d/blacklist.conf  --ssb not ok... edit /etc/rc.local to try
+
+root@hjh:/home/hjh# depmod
+root@hjh:/home/hjh# modprobe wl
+
+then a hint popup tells u wifi is availabel.... :)
+
+==补充
+1. 硬盘安装时刚开始在分区后就卡住。可以重新开始，先做：umount -l /isolinux
+2. 安装开始时选择 不安装第三方软件（需网络下载）
+  如果选择了，在update-notifier-common步骤下载flashplugin卡住时，查找到下载进程/usr/lib/apt/methods/http杀掉即可继续了
+3. 切换到root: sudo su
+
