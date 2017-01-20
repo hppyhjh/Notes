@@ -58,7 +58,7 @@ Community Members : often use and care deeply about the project and are active i
 
 -看事务log  --git log
 -看双方的差别  --git status
--提交事务
+-提交事务  --git add .; git commit; git push ; push做了之后，hub上才能看到
 
 
 
