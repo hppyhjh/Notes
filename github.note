@@ -32,11 +32,11 @@ Pull Requests are the heart of collaboration on GitHub. open a pull request, you
 As soon as you make a commit, you can open a pull request and start a discussion, even before the code is finished.
 
 ==Fork
-A fork is a copy of a repository. allows you to freely experiment with changes without affecting the original project.
-Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+A fork is a copy of a repository. to freely experiment with changes without affecting the original project.
+used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
 A great example of using forks to propose changes is for bug fixes. 
 
-fork a project in order to propose changes to the upstream, or original, repository. In this case, it's good practice to regularly sync your fork with the upstream repository. To do this, you'll need to use Git on the command line. 
+fork a project in order to propose changes to the upstream, or original, repository.  it's good practice to regularly sync your fork with the upstream repository. To do this, you'll need to use Git on the command line. 
 Sync a fork of a repository to keep it up-to-date with the upstream repository.
 
 Merge the changes from upstream/master into your local master branch. This brings your fork's master branch into sync with the upstream repository, without losing your local changes.
@@ -44,6 +44,21 @@ Merge the changes from upstream/master into your local master branch. This bring
 
 After a fork, all branches are also cloned...
 Creating branches: Branches allow you to build new features or test out ideas without putting your main project at risk.
+
+-------
+Projects often have a community around them:
+
+Owner is the user or organization that created the project has the project on their account.
+
+Maintainers and Collaborators : primarily doing the work on a project and driving the direction. Oftentimes the owner and the maintainer are the same. They have write access to the repository.
+
+Contributors is everyone who has had a pull request merged into a project.
+
+Community Members : often use and care deeply about the project and are active in discussions for features and pull requests.
+
+-看事务log  --git log
+-看双方的差别  --git status
+-提交事务
 
 
 
