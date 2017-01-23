@@ -71,12 +71,6 @@ Node.js 的作者瑞恩·达尔 (Ryan Dahl) 的目标是创建具有实时推送
 
 启动AVD，耗资源啊，这时候我T400的CPU已经100%了 Android Virtual Device Manager  -- Android Developer Tools  ADT
 
-编写Test，使用ADT安装好Maven插件，创建一个Maven项目，添加一个文件夹apps用来存放被测的app，这里测试的是ContactManager.apk
-
-http://www.cnblogs.com/fnng/p/4540731.html
-
-http://www.cnblogs.com/oscarxie/p/3488262.html
-
 2017-1-5
 1.国内站点搜索下载AppiumForWindows_1_4_16。48M。安装很慢，解压大量小文件
 2.XP下报‘不是有效win32程序’

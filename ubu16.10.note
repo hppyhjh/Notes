@@ -1,0 +1,20 @@
+2017年01月20日 
+Nancy's computer
+1.apt..git --clone
+2.
+https://developer.android.google.cn/studio/index.html --官方SDK地址 并不需要翻墙可以下载
+3. apt..nodejs-legacy  & npm
+4.
+npm install --registry=https://registry.npm.taobao.org appium
+
+2017年01月23日 
+上面的第4步骤，加sudo; 否则报no permission.
+/home/nancy/devtool/node_modules/.bin/appium   --很坏，在.bin下，默认看不见
+android-studio$ du -sm */
+1       bin/
+149     gradle/
+138     jre/
+261     lib/
+1       license/
+279     plugins/
+
