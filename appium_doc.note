@@ -1,4 +1,13 @@
-docs/en/about-appium/intro.md
+=== appium/docs/en/advanced-concepts/settings.md 
+Settings are a new concept introduced by appium. currently not a part of the Mobile JSON Wire Protocol, or the Webdriver spec.
+a way to specify the behavior of the appium server.
+Control the way the appium server behaves during test automation.  not apply to controlling the app or device under test.
+
+===appium/docs/cn/writing-running-appium/windows-app-testing.md 
+Windows specific UI testing on Appium is powered by WinAppDriver, which is downloaded as part of Appium install.
+Windows Application Driver supports testing Universal Windows Platform (UWP) and Classic Windows (Win32) apps on Windows 10 PC  --- ON PC
+
+===docs/en/about-appium/intro.md
 #NOT do anything to be-tested APP
 using vendor-provided automation frameworks under the hood. That way, we don't need to compile in any Appium-specific or third-party code or frameworks to your app. This means you're testing the same app you're shipping. The vendor-provided frameworks we use are:
 
@@ -14,12 +23,10 @@ Session & Desired Capabilities
 There are client libraries (in Java, Ruby, Python, PHP, JavaScript, and C#) which support Appium's extensions to the WebDriver protocol. When using Appium, you want to use these client libraries instead of your regular WebDriver client. 
 
 #NOT reinvent the wheel
-WebDriver has become the de facto standard for automating web browsers, and is a W3C Working Draft. we have extended the protocol with extra API methods useful for mobile automation.
+WebDriver has become the de facto standard for automating web browsers, a W3C Working Draft. we have extended the protocol with extra API methods useful for mobile automation.  --只是浏览器，原生应用呢
 
-----------------------Appium Python Client
-
+===Appium Python Client
 An extension library for adding Selenium 3.0 draft and Mobile JSON Wire Protocol Specification draft functionality to the Python language bindings, for use with the mobile testing framework Appium.
-
 
 The majority of the usage remains as it has been for Selenium 2 (WebDriver), and as the official Selenium Python bindings begins to implement the new specification that implementation will be used underneath, so test code can be written that is utilizable with both bindings.
 

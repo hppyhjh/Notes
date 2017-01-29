@@ -1,49 +1,48 @@
-fork testerhome 这个库：https://github.com/testerhome/appium.git
+fork testerhome：https://github.com/testerhome/appium.git   (appium V1.6.3)
 翻译自己认领的文档，提交到fork的库，在发起 pull request。
 
 ------
 GitHub:
 offers distributed version control and source code management (SCM) functionality of Git as well as adding its own features. 
-provides access control and several collaboration features such as bug tracking, feature requests, task management, and wikis for every project.
+provides access control and collaboration features such as bug tracking, feature requests, task management, and wikis for every project.
 
-April 2016, having more than 14 million users and more than 35 million repositories,[6] making it the largest host of source code in the world.[7]
-
-Development of the GitHub platform began on 1 October 2007. 
-The site was launched in April 2008.
+April 2016, having more than 14 million users and more than 35 million repositories
+Development of the GitHub platform began on 1 October 2007. The site was launched in April 2008.
 provides social networking-like functions such as feeds, followers, wikis (using wiki software called Gollum) and a social network graph to display how developers work on their versions ("forks") of a repository and what fork (and branch within that fork) is newest.
 
-c. 修改，直接fork一个就可以改了，改完可以给作者发个pull request，这样才能让开源项目不断的完善起来
+修改，直接fork一个就可以改了，改完可以给作者发个pull request，这样才能让开源项目不断的完善起来
 github 让这一切都变得简单，直接；不像很久以前的开源界，想要贡献点代码，你还得先进mail list，先帮着解答，时机成熟了再让你改点bug
 
 Git 是由 Linux 之父 Linus Tovalds 为了更好地管理linux内核开发而创立的分布式版本控制／软件配置管理软件。
 
 ---Guide on Github
 ==Repository & PR
-We use branches to experiment and make edits before committing them to master.
+use branches to experiment and make edits before committing them to master.
 
 create a branch off the master branch, you’re making a copy, or snapshot, of master as it was at that point in time. If someone else made changes to the master branch while you were working on your branch, you could pull in those updates.
 
 developers, writers, and designers use branches for keeping bug fixes and feature work separate from our master (production) branch. When a change is ready, they merge their branch into master.
 
-**saved changes are called commits. Each commit has an associated commit message, which is a description explaining why a particular change was made. Commit messages capture the history of your changes, so other contributors can understand what you’ve done and why.
+**saved changes are called commits. an associated commit message, which is a description explaining why a particular change was made. Commit messages capture the history of your changes, so other contributors can understand what you’ve done and why.
 
-Pull Requests are the heart of collaboration on GitHub. open a pull request, you’re proposing your changes and requesting that someone review and pull in your contribution and merge them into their branch. Pull requests show diffs, or differences, of the content from both branches. The changes, additions, and subtractions are shown in green and red.
+Pull Requests are the heart of collaboration on GitHub. open a pull request, you’re proposing your changes and requesting that someone review and pull in your contribution and merge them into their branch. 
+Pull requests show diffs, or differences, of the content from both branches. The changes, additions, and subtractions are shown in green and red.
 
 As soon as you make a commit, you can open a pull request and start a discussion, even before the code is finished.
 
 ==Fork
-A fork is a copy of a repository. to freely experiment with changes without affecting the original project.
-used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+A fork is a copy of a repository.(with all branches, I think...) to freely experiment with changes without affecting the original project.
+to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
 A great example of using forks to propose changes is for bug fixes. 
 
-fork a project in order to propose changes to the upstream, or original, repository.  it's good practice to regularly sync your fork with the upstream repository. To do this, you'll need to use Git on the command line. 
+to propose changes to the upstream, or original, repository.  it's good practice to regularly sync your fork with the upstream repository. To do this, you'll need to use Git on the command line. 
 Sync a fork of a repository to keep it up-to-date with the upstream repository.
 
 Merge the changes from upstream/master into your local master branch. This brings your fork's master branch into sync with the upstream repository, without losing your local changes.
 
 
 After a fork, all branches are also cloned...
-Creating branches: Branches allow you to build new features or test out ideas without putting your main project at risk.
+Creating branches: Branches allow to build new features or test out ideas without putting your main project at risk.
 
 -------
 Projects often have a community around them:
@@ -60,6 +59,11 @@ Community Members : often use and care deeply about the project and are active i
 -看双方的差别  --git status
 -提交事务  --git add .; git commit; git push ; push做了之后，hub上才能看到
 
+
+ git commit
+[master 4bb3033] added 20170123
+ 2 files changed, 20 insertions(+), 6 deletions(-)
+ create mode 100644 ubu16.10.note
 
 
 
