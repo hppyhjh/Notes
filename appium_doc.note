@@ -1,3 +1,58 @@
+===appium/docs/cn/writing-running-appium/touch-actions.md 
+While Selenium WebDriver spec has support for certain kinds of mobile
+interaction, its parameters are not always easily mappable to the functionality
+that the underlying device automation (like UIAutomation in the case of iOS)
+provides. 
+To that end, Appium implements the new TouchAction / MultiAction API
+defined in the newest version of the spec
+this is different from the earlier version of the TouchAction API in
+the original JSON Wire Protocol.
+
+These APIs allow you to build up arbitrary gestures with multiple actuators.
+see Appium client docs for your language in order to find examples
+of using this API.
+
+*MultiTouch* objects are collections of TouchActions.
+
+The best way to interact with the slider on Android is with TouchActions.
+
+uiautomator2.md::
+UIObject2, Unlike UiObject, the UIElement is bound to a particular view instance and can become stale if the underlying view object is destroyed. 
+UIAutomator 2 utilizes capabilities of Gradle as a build system. Previous, UIAutomator used Maven/Ant.
+Test packages produced are now APKs. Previously, UIAutomator produced .jar or .zip files. This makes UIAutomator 2 completely Android instrumentation capable.
+
+The original version of UiAutomator ran as a shell program:
+```adb shell uiautomator runtest ...```
+UiAutomator 2 is based on Android Instrumentation. Tests are compiled to APKs, and run in an application process:
+```adb shell am instrument ...```
+
+
+===appium/docs/cn/appium-setup/android-hax-emulator.md ...md
+runs on an Intel® cpu, you can check out HAXM. leverage your hardware for
+virtualization, accelerating the emulator.
+To install HAXM open the Android SDK Manager, you will find the package under Extras.
+require an x86 emulator image
+android-setup.md:: 
+1.install Node.js (>v4)
+2.install Android SDK (blocked). run 'android' tool to install > API Level 17
+
+(If you want to run Appium from source, you will also need [Apache Ant](http://ant.apache.org/) to build the bootstrap jar that Appium uses for running against Android simulators/devices.)
+到这里就配置好了。。。
+run `npm install` from your Appium checkout to install all the
+dependencies.
+
+Appium uses, comes prepackaged with, a project called [Selendroid](https://selendroid.io) for running Android
+versions 2.3 to 4.1.  Appium switches to using Selendroid automatically when it
+detects older versions
+
+parallel_tests.md::
+to automate multiple Android sessions on a single machine. All it involves is starting multiple Appium servers with different flags.
+
+=== appium/docs/cn/contributing-to-appium/appium-from-source.md 
+gulp是前端开发过程中对代码进行构建的工具
+
+
+
 === appium/docs/en/advanced-concepts/settings.md 
 Settings are a new concept introduced by appium. currently not a part of the Mobile JSON Wire Protocol, or the Webdriver spec.
 a way to specify the behavior of the appium server.
