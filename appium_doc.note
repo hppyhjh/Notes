@@ -1,12 +1,8 @@
 ===appium/docs/cn/writing-running-appium/touch-actions.md 
-While Selenium WebDriver spec has support for certain kinds of mobile
-interaction, its parameters are not always easily mappable to the functionality
-that the underlying device automation (like UIAutomation in the case of iOS)
-provides. 
-To that end, Appium implements the new TouchAction / MultiAction API
-defined in the newest version of the spec
-this is different from the earlier version of the TouchAction API in
-the original JSON Wire Protocol.
+Selenium WebDriver spec has support for certain kinds of mobile interaction, its parameters are not always easily mappable to the functionality
+that the underlying device automation (like UIAutomation in the case of iOS) provides. 
+To that end, Appium implements the new TouchAction / MultiAction API defined in the newest version of the spec
+this is different from the earlier version of the TouchAction API in the original JSON Wire Protocol.
 
 These APIs allow you to build up arbitrary gestures with multiple actuators.
 see Appium client docs for your language in order to find examples
