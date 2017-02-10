@@ -1,0 +1,35 @@
+2017.02.02 初六 周四
+行李箱没有锁好，哗啦啦撒了一地，笔记本电脑也很重的摔了二个跟头
+下午到九江，开机进不了系统。用小剪刀拆下硬盘再装上去，好了，很得意
+初七上班，下午用了半天笔记本
+初八早上开机找不到硬盘。带着侥幸中午带回家折腾，对硬盘又拍又打，没有奇迹。勉强找到硬盘：grub-rescue: no such partition。list显示的分区已不全，能看到home分区内容。normal显示无此命令。
+最佳的备份数据的时机已丢失！一百倍的悔恨和埋怨。
+
+2017.02.04 初八 周六班
+晚上买U盘，同时开始折腾PXE启动连ubu16.10，看有没有希望挂载坏的硬盘。
+1.有限网卡设置固定IP。/etc/network/interfaces .. ifup eno1
+2.dhcp service.  /etc/dhcp/dhcpd.conf .. isc-dhcp-server .. /etc/default/isc-dhcp-server
+3.dpkg -L pxelinux .. syslinux
+  ---Failed to load ldlinux.c32 .. PXELINUX 6.03 .. Unable to locate conf file ..
+  pxelinux.cfg/default --> copy from isolinux.cfg of **TinyCoreLinux（7.2） .. kernel initrd ..
+4./etc/default/tftpd-hpa .. tftpd-hpa service ..
+5.pxe boot ok
+6.ubuntu16.10 里装好testdisk，用tftp取来，不能运行。。。 badblocks...
+7.下载恢复linux发行版,都在500M左右。 **systemrescuecd-x86-4.9.2.iso  antiX-16.1_386-base.iso
+
+2017.02.05 初九 周日
+1.制作systemrescuecd启动U盘。..usb_inst.sh in iso..
+2.启动，找不到硬盘。testdisk认sda容量不对，退出。
+3.甩拍硬盘不停重启都找不到硬盘；用热风吹，找到了
+4.testdisk 读分区表很慢。超过2小时。有过一个保存逻辑分区到image的选项。
+5.放弃。晚上电脑被抢走写日报
+
+
+找到硬盘，其他盘手工考完，E盘用diskguard做镜像，结果在睡觉后失败
+再次找到硬盘，E盘手工考完。用了工具看进度。欢欢上班帮忙。
+
+02.08 早上抢500券买thinkpad new s2 
+
+
+
+
