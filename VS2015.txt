@@ -1,0 +1,6 @@
+﻿2017/2/10
+Appium说支持win10，里面有工具是VS2015里的。故安装之。
+感觉在线安装慢，下载vs2015.com_chs.iso在download.microsoft.com速度很快。3.9G
+安装时未选windows 10 SDK, 占9G空间
+卡在应用 适用于VS的GitHub扩展。重启电脑，重新安装。
+VS里有“团队资源管理器”就是GIT的图形化工具，但没找到git命令。
