@@ -60,6 +60,8 @@ Community Members : often use and care deeply about the project and are active i
 -看双方的差别  --git status  单向
 -提交事务  --git add .; git commit; git push ; push做了之后，hub上才能看到
 -将源处更新拉到本地 --git pull
-
+------
+Apache maintains read-only GIT mirrors of Apache codebases, for JMeter
+on github: apache/jmeter mirrored from git://git.apache.org/jmeter.git
 
 

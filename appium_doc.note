@@ -1,26 +1,23 @@
 ===appium/docs/cn/writing-running-appium/touch-actions.md 
-Selenium WebDriver spec has support for certain kinds of mobile interaction, its parameters are not always easily mappable to the functionality
+Selenium WebDriver spec support for certain kinds of mobile interaction, its parameters are not always easily mappable to the functionality
 that the underlying device automation (like UIAutomation in the case of iOS) provides. 
-To that end, Appium implements the new TouchAction / MultiAction API defined in the newest version of the spec
+Appium implements the new TouchAction / MultiAction API defined in the newest version of the spec
 this is different from the earlier version of the TouchAction API in the original JSON Wire Protocol.
 
 These APIs allow you to build up arbitrary gestures with multiple actuators.
-see Appium client docs for your language in order to find examples
-of using this API.
+see Appium client docs for your language in order to find examples of using this API.
 
 *MultiTouch* objects are collections of TouchActions.
 
 The best way to interact with the slider on Android is with TouchActions.
 
 uiautomator2.md::
-UIObject2, Unlike UiObject, the UIElement is bound to a particular view instance and can become stale if the underlying view object is destroyed. 
-UIAutomator 2 utilizes capabilities of Gradle as a build system. Previous, UIAutomator used Maven/Ant.
+UIObject2, Unlike UiObject, UIElement is bound to a particular view instance and can become stale if the underlying view object is destroyed. 
+UIAutomator 2 utilizes Gradle as a build system. Previous, UIAutomator used Maven/Ant.
 Test packages produced are now APKs. Previously, UIAutomator produced .jar or .zip files. This makes UIAutomator 2 completely Android instrumentation capable.
 
-The original version of UiAutomator ran as a shell program:
-```adb shell uiautomator runtest ...```
-UiAutomator 2 is based on Android Instrumentation. Tests are compiled to APKs, and run in an application process:
-```adb shell am instrument ...```
+original version of UiAutomator ran as a shell program: ```adb shell uiautomator runtest ...```
+UiAutomator 2 is based on Android Instrumentation. Tests are compiled to APKs, run in an application process: ```adb shell am instrument ...```
 
 
 ===appium/docs/cn/appium-setup/android-hax-emulator.md ...md
@@ -55,26 +52,30 @@ a way to specify the behavior of the appium server.
 Control the way the appium server behaves during test automation.  not apply to controlling the app or device under test.
 
 ===appium/docs/cn/writing-running-appium/windows-app-testing.md 
-Windows specific UI testing on Appium is powered by WinAppDriver, which is downloaded as part of Appium install.
+Windows specific UI testing on Appium is powered by WinAppDriver, downloaded as part of Appium install.
 Windows Application Driver supports testing Universal Windows Platform (UWP) and Classic Windows (Win32) apps on Windows 10 PC  --- ON PC
+test a UWP app, you can use any Selenium supported language and simply specify **Application Id** for the app under test in the **app** capabilities entry.
+When testing the application you authored yourself, you can find the **Application Id** in the generetated `AppX\vs.appxrecipe` file under `RegisteredUserNmodeAppID` node. E.g. ```c24c8163-548e-4b84-a466-530178fc0580_scyf5npe3hv32!App
+To test a classic Windows app, you can also use any Selenium supported language and specify the **full executable path** for the app under test in the **app** capabilities entry.
+Microsoft Visual Studio 2015 by default includes Windows SDK that provides great tool to inspect the application you are testing. This tool allows you to see every UI element/node that you can query using Windows Application Driver. This **inspect.exe** tool can be found under the Windows SDK folder such as `C:\Program Files (x86)\Windows Kits\10\bin\x86`
 
 ===docs/en/about-appium/intro.md
 #NOT do anything to be-tested APP
-using vendor-provided automation frameworks under the hood. That way, we don't need to compile in any Appium-specific or third-party code or frameworks to your app. This means you're testing the same app you're shipping. The vendor-provided frameworks we use are:
+using vendor-provided automation frameworks under the hood. we don't need to compile in any Appium-specific or third-party code or frameworks to your app. means you're testing the same app you're shipping. The vendor-provided frameworks we use are:
 
-#NOT locked into a specific lang & framework
-wrapping the vendor-provided frameworks in one API, the WebDriver API. WebDriver (aka "Selenium WebDriver") specifies a client-server protocol (known as the JSON Wire Protocol). 
-Given this client-server architecture, a client written in any language can be used to send the appropriate HTTP requests to the server. There are already clients written in every popular programming language. This also means that you're free to use whatever test runner and test framework you want; the client libraries are simply HTTP clients and can be mixed into your code any way you please. In other words, Appium & WebDriver clients are not technically "test frameworks" -- they are "automation libraries". 
+#NOT locked into specific lang & framework
+wrapping vendor-provided frameworks in one API, the WebDriver API. WebDriver (aka "Selenium WebDriver") specifies a client-server protocol (known as the JSON Wire Protocol). 
+Given this client-server architecture, a client written in any language can be used to send the appropriate HTTP requests to the server. There are already clients written in every popular programming language. also means free to use whatever test runner and test framework you want; the client libraries are simply HTTP clients and can be mixed into your code any way you please. In other words, Appium & WebDriver clients are not technically "test frameworks" -- they are "automation libraries". 
 
 Appium is at its heart a webserver that exposes a REST API.
-we can write our test code in any language that has a http client API, but it is easier to use one of the Appium client libraries. We can put the server on a different machine than our tests are running on. We can write test code and rely on a cloud service like Sauce Labs to receive and interpret the commands.
+can write test code in any language that has a http client API, but easier to use one of the Appium client libraries. We can put the server on a different machine than our tests are running on. We can write test code and rely on a cloud service like Sauce Labs to receive and interpret the commands.
 
 Session & Desired Capabilities
 
-There are client libraries (in Java, Ruby, Python, PHP, JavaScript, and C#) which support Appium's extensions to the WebDriver protocol. When using Appium, you want to use these client libraries instead of your regular WebDriver client. 
+client libraries (in Java, Ruby, Python, PHP, JavaScript, and C#) support Appium's extensions to the WebDriver protocol. When using Appium, you want to use these client libraries instead of your regular WebDriver client. 
 
 #NOT reinvent the wheel
-WebDriver has become the de facto standard for automating web browsers, a W3C Working Draft. we have extended the protocol with extra API methods useful for mobile automation.  --只是浏览器，原生应用呢
+WebDriver has become the de facto standard for automating web browsers, W3C Working Draft. we have extended the protocol with extra API methods useful for mobile automation.  --只是浏览器，原生应用呢
 
 ===Appium Python Client
 An extension library for adding Selenium 3.0 draft and Mobile JSON Wire Protocol Specification draft functionality to the Python language bindings, for use with the mobile testing framework Appium.
