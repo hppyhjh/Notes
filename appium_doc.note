@@ -54,10 +54,10 @@ Control the way the appium server behaves during test automation.  not apply to 
 ===appium/docs/cn/writing-running-appium/windows-app-testing.md 
 Windows specific UI testing on Appium is powered by WinAppDriver, downloaded as part of Appium install.
 Windows Application Driver supports testing Universal Windows Platform (UWP) and Classic Windows (Win32) apps on Windows 10 PC  --- ON PC
-test a UWP app, you can use any Selenium supported language and simply specify **Application Id** for the app under test in the **app** capabilities entry.
-When testing the application you authored yourself, you can find the **Application Id** in the generetated `AppX\vs.appxrecipe` file under `RegisteredUserNmodeAppID` node. E.g. ```c24c8163-548e-4b84-a466-530178fc0580_scyf5npe3hv32!App
-To test a classic Windows app, you can also use any Selenium supported language and specify the **full executable path** for the app under test in the **app** capabilities entry.
-Microsoft Visual Studio 2015 by default includes Windows SDK that provides great tool to inspect the application you are testing. This tool allows you to see every UI element/node that you can query using Windows Application Driver. This **inspect.exe** tool can be found under the Windows SDK folder such as `C:\Program Files (x86)\Windows Kits\10\bin\x86`
+test UWP app, use any Selenium supported language and simply specify **Application Id** for the app under test in the **app** capabilities entry.
+When testing the application you authored yourself, find the **Application Id** in the generetated `AppX\vs.appxrecipe` file under `RegisteredUserNmodeAppID` node. E.g. ```c24c8163-548e-4b84-a466-530178fc0580_scyf5npe3hv32!App
+To test a classic Windows app, specify the **full executable path** for the app under test in the **app** capabilities entry.
+Windows SDK provides great tool to inspect the application you are testing. see every UI element/node that you can query using Windows Application Driver. This **inspect.exe** tool can be found under the Windows SDK folder such as `C:\Program Files (x86)\Windows Kits\10\bin\x86`
 
 ===docs/en/about-appium/intro.md
 #NOT do anything to be-tested APP
