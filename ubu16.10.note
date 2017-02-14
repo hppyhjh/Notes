@@ -1,3 +1,7 @@
+2017年02月14日 
+xterm -fn -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1  --中文不会有方块了
+sudo vi /etc/X11/app-defaults/XTerm  --修改*VT100.utf8Fonts.font和font5一样。看不懂这个字体的命名方式
+
 2017年01月20日 
 Nancy's computer... repeat appium setup & be familiar with git
 1.apt..git --clone
@@ -20,7 +24,7 @@ android-studio$ du -sm */
 运行appium成功(v1.6.3) (node v4.2.6 npm v3.5.2)
 
 2017年01月29日 
-http://developer.android.com/sdk/index.html  --这个地址是SDK地址，访问不了
+http://developer.android.com/sdk/index.html  --SDK地址，访问不了
 用中文网站下载 android-sdk_r24.4.1-linux.tgz  --android 依赖java
 ubuntu基本工具 java(9),tree,
 openjdk9 -- Can not initialize cryptographic mechanism  --jdk8 will be ok

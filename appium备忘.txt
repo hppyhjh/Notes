@@ -1,8 +1,12 @@
+2017年02月13日 
+appium是使用node.js里的npm安装的，再看一下JS
+AS只能用于android开发，回头看android开发
+
 2017年01月16日 
 https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip 466M 不含SDK.
-下载SDK tool. android-sdk_r24.4.1-linux.tgz  326M
+SDK tool. android-sdk_r24.4.1-linux.tgz  326M
 1.contains basic SDK tools. Not contain: Android platform | third-party libs.
-3.Why seprate from me: platform-tools periodically updated to support features in Android platform, including adb,dexdump..
+3.Why seprate: platform-tools periodically updated to support features in Android platform, including adb,dexdump..
 tools/android: start SDK manger
 
 启动AS(Android Studio)，提示安装SDK，不理它。
@@ -11,9 +15,8 @@ Instant Run需要安装目标平台版本。
 
 ---from windows in home
 adb devices -l
-List of devices attached
 UWYST8VOSOS4IB5L       device product:H30-T00 model:H30_T00 device:hwH30-T00
-UWYST8VOSOS4IB5L       no permissions (verify udev rules); see [http://developer.android.com/tools/device.html] usb:2-1   --solution:: chown root:root adb; chmod 4777 adb; adb kill-server; adb devices -l
+UWYST8VOSOS4IB5L       no permissions (verify udev rules); see [http://developer.android.com/tools/device.html] usb:2-1   --solution:: chown root:root adb; chmod 4777 adb; adb kill-server; adb devices -l  --set user or group ID on execution (s)
 
 appium -a 127.0.0.1 -p 4723 -U UWYST8VOSOS4IB5L --no-reset
 
@@ -24,7 +27,6 @@ https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
 
 > info: [debug] 1 device(s) connected
 
-
 > info: [debug] executing cmd: D:\Users\Pactera\AppData\Local\Android\sdk\platform-tools\adb.exe -s UWYST8VOSOS4IB5L forward tcp:4724 tcp:4724
 > info: [debug] Pushing appium bootstrap to device...
 > info: [debug] [BOOTSTRAP] [debug] Socket opened on port 4724
@@ -33,24 +35,19 @@ https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
 > info: [debug] executing cmd: D:\Users\Pactera\AppData\Local\Android\sdk\platform-tools\adb.exe -s UWYST8VOSOS4IB5L shell "am start -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000 -n com.android.calculator2/.Calculator"
 > info: [debug] Waiting for pkg "com.android.calculator2" and activity ".Calculator" to be focused
 > info: [debug] Getting focused package and activity
->
 
-
-从2014年开始，google不再更新eclipse ADT，最新版的ADT版本是23，之后是android studio，但android studio只能开发安卓项目，而测试项目是java project，所以我们要安装eclipse，当然也可以安装其他的，如intellij idea，myeclipse等。
+从2014年开始，google不再更新eclipse ADT，最新ADT版本是23，之后是android studio，但android studio只能开发安卓项目，而测试项目是java project，所以我们要安装eclipse
 
 appium的hello world
 
 ---------
 2017年01月10日 
-在安装Appium文档中，官方特别指出最好不要使用sudo命令安装node、npm软件，否则后面安装appium会遇到麻烦
-
-error: Appium will not work if used or installed with sudo. Please rerun/install as a non-root user. If you had to install Appium using `sudo npm install -g appium`, the solution is to reinstall Node using a method (Homebrew, for example) that doesn't require sudo to install global npm packages.
+error: Appium will not work if used or installed with sudo. Please rerun/install as a non-root user. If had to install Appium using `sudo npm install -g appium`, solution is to reinstall Node using a method (Homebrew, for example) that doesn't require sudo to install global npm packages.
 
 https://nodejs.org/download/release/  找的2016.6月的版本
 hjh@hjh:~/devtool/node-v6.2.2-linux-x64/bin$ ./node -v
 v6.2.2
-hjh@hjh:~/devtool/node-v6.2.2-linux-x64/bin$ export PATH=.:$PATH
-hjh@hjh:~/devtool/node-v6.2.2-linux-x64/bin$ npm -v
+hjh@hjh:~/devtool/node-v6.2.2-linux-x64/bin$ export PATH=.:$PATH; npm -v
 3.9.5
 
 #直接安装慢，用taobao mirror
@@ -59,8 +56,7 @@ hjh@hjh:~$ cnpm install -g appium  --有截屏
 appium可运行
 
 ---------
-NPM是随同NodeJS一起安装的包管理工具。包的定义和NPM都围绕着package.json文件做文章，package.json文件其实就相当于JAVA中的MANIFEST.MF文件，用于存放模块的名称、版本、作者、机构、模块入口、依赖项等信息。
-
+NPM是随同NodeJS一起安装的包管理工具。包的定义和NPM都围绕着package.json文件做文章，package.json相当于JAVA中的MANIFEST.MF文件，用于存放模块的名称、版本、作者、机构、模块入口、依赖项等信息。
 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。包管理器 npm，是全球最大的开源库生态系统。
 
 “Node.js 是谷歌 V8 引擎、libuv平台抽象层 以及主体使用 Javscript 编写的核心库三者集合的一个包装外壳。” 
@@ -68,8 +64,7 @@ Node.js 的作者瑞恩·达尔 (Ryan Dahl) 的目标是创建具有实时推送
 
 简而言之：Node.js 在实时的 Web应用上采用了基于 WebSocket 的推送技术。这意味着什么样的革命性？Well，在经过了20多年的基于无状态的请求-返机制的无状态交互之后，我们终于有了实时的，双向连接的web应用，客户端和服务器端都可以发起通信，能够自由地交换数据。与此形成鲜明对比的是传统的 web响应模式，客户端总是主动发起通信而服务端被动返回。此外，这些都是基于运行在标准80端口上的开放Web组件（HTML、CSS和JS）。
 
-
-启动AVD，耗资源啊，这时候我T400的CPU已经100%了 Android Virtual Device Manager  -- Android Developer Tools  ADT
+启动AVD，耗资源啊，T400的CPU已经100%了 Android Virtual Device Manager  -- Android Developer Tools  ADT
 
 2017-1-5
 1.国内站点搜索下载AppiumForWindows_1_4_16。48M。安装很慢，解压大量小文件
@@ -77,52 +72,38 @@ Node.js 的作者瑞恩·达尔 (Ryan Dahl) 的目标是创建具有实时推送
 3.转linux环境
 
 2017/1/7
-最开始只有eclipse + 独立的ADT
-eclipe作为一种通用的IDE，经常出现eclipse的版本不兼容ADT的情况。Google推出了ADT-bundle版本，解决eclipse和ADT不兼容的问题。
-eclipse的主要目的是打造为适应各种语言的开发环境，而不单单为安卓服务，所以Google决定自己解决这个问题，就有了Android Studio；
-
-比如android-studio-ide-version-linux.zip不包含SDK Tools,运行Android Studio会提示联网下载安装SDK等工具.bundle则是打包了SDK的IDE.
+最开始eclipse + 独立的ADT. 经常出现eclipse的版本不兼容ADT的情况。Google推出了ADT-bundle版本，解决eclipse和ADT不兼容的问题。
+eclipse不单单为安卓服务，所以Google决定自己解决这个问题，就有了Android Studio；
+android-studio-ide-version-linux.zip不包含SDK Tools,运行Android Studio会提示联网下载安装SDK等工具.bundle则是打包了SDK的IDE.
 
 Android Studio 是IntelJ Not Eclipse
-android-studio-bundle-145.3330264-windows.exe 我下载的。1.6G. 版本是2.2.2 这个版本不需要单独下载android platform之类
+android-studio-bundle-145.3330264-windows.exe 1.6G. 版本2.2.2 不需要再下载android platform之类
 androiddevtools.cn  国内站，提供的链接有些版本已失效。
 
 wiki:
-
 Appium won the 2014 Bossie award of InfoWord about the best open source desktop and mobile software.
 Appium was selectioned as an Open Source Rookie of the Year by Black Duck Software.
 
-
-Selenium was originally developed by Jason Huggins in 2004 as an internal tool at ThoughtWorks.
+Selenium originally developed by Jason Huggins in 2004 as an internal tool at ThoughtWorks.
 In 2007, Huggins joined Google. Together with others like Jennifer Bevan, he continued with the development and stabilization of Selenium RC. 
-At the same time, Simon Stewart at ThoughtWorks developed a superior browser automation tool called WebDriver. 
-In 2009, after a meeting between the developers at the Google Test Automation Conference, it was decided to merge the two projects, 
-and call the new project Selenium WebDriver, or Selenium 2.0.
+same time, Simon Stewart at ThoughtWorks developed a superior browser automation tool called WebDriver. 
+In 2009, after a meeting at the Google Test Automation Conference, it was decided to merge the two projects, call the new project Selenium WebDriver, or Selenium 2.0.
 
-
-Selenium WebDriver is the successor to Selenium RC. 
-Selenium WebDriver accepts commands (sent in Selenese, or via a Client API) and sends them to a browser. 
-This is implemented through a browser-specific browser driver, which sends commands to a browser, and retrieves results. 
+Selenium WebDriver is the successor to Selenium RC. accepts commands (sent in Selenese, or via a Client API) and sends them to a browser. 
+implemented through a browser-specific browser driver, which sends commands to a browser, and retrieves results. 
 Most browser drivers actually launch and access a browser application (such as Firefox or Internet Explorer); 
 there is also an HtmlUnit browser driver, which simulates a browser using HtmlUnit.
 
-adt只是一个eclipse的插件，里面可以设置sdk路径.SDK在Android中，他为开发者提供了库文件以及其他开发所用到的工具。简单理解为开发工具包集合，是整体开发中所用到的工具包，如果你不用Eclipse作为你的开发工具，你就不需要下载ADT，只下载SDK即可开发。
-
 ==虫师摘要
-D:\Users\Pactera\AppData\Local\Android\sdk
-%ANDROID_HOME%
-双击启动SDK Manager.exe 程序。
-Android SDK Platform-tools 里面有adb 、aapt、fastboot 等工具包。--可以使用sdk manager下载。而不必都按作者说的手工下载
+D:\Users\Pactera\AppData\Local\Android\sdk %ANDROID_HOME%
 环境变量 ANDROID_HOME & PATH（android sdk & appium) 
 
-安装SDK System images  --如果不用模拟器测试呢？
-这是在创建模拟器时需要的system image，也就是在创建模拟器时 CPU/ABI项需要选择的
+安装SDK System images 
+创建模拟器时需要的system image，也就是在创建模拟器时 CPU/ABI项需要选择的
 
-Appium Client是对webdriver原生api的一些扩展和封装。它可以帮助我们更容易的写出用例，写出更好懂的用例。
 Appium Client是配合原生的webdriver来使用的，因此二者必须配合使用缺一不可。
 截止作者发稿，最新版本为Python2.7.10版本。
 C:\package\setuptools-7.0>pip install Appium-Python-Client
-
 
 第三步，通过Python编写自动化测试脚本。
 #coding=utf-8

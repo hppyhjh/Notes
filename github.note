@@ -18,15 +18,15 @@ Git 是由 Linux 之父 Linus Tovalds 为了更好地管理linux内核开发而�
 
 ---Guide on Github
 ==Repository & PR
-use branches to experiment and make edits before committing them to master.
+use branches to experiment, make edits before committing them to master.
 
-create a branch off the master branch, you’re making a copy, or snapshot, of master. If someone else made changes to the master branch while you were working on your branch, you could pull in those updates.
+create a branch off the master branch, you’re making a copy, or snapshot, of master. If someone else made changes to the master branch, you could pull in those updates.
 
 developers, writers, and designers use branches for keeping bug fixes and feature work separate from our master (production) branch. When a change is ready, they merge their branch into master.
 
-**saved changes are called commits. an associated commit message, which is a description explaining why a particular change was made. Commit messages capture the history of your changes, so other contributors can understand what you’ve done and why.
+**saved changes are called commits. an associated commit message, a description explaining why a particular change was made. Commit messages capture the history of your changes, so other contributors can understand what you’ve done and why.
 
-Pull Requests are the heart of collaboration on GitHub. open a pull request, you’re proposing your changes and requesting that someone review and pull in your contribution and merge them into their branch. 
+Pull Requests are the heart of collaboration on GitHub. open a pull request, proposing your changes and requesting that someone review and pull in your contribution and merge them into their branch. 
 Pull requests show diffs, or differences, of the content from both branches. The changes, additions, and subtractions are shown in green and red.
 
 As soon as you make a commit, you can open a pull request and start a discussion, even before the code is finished.
