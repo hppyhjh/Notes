@@ -9,6 +9,8 @@ aapt d badging com.yitong.mbank.jjccb.1701201638.apk
 appiumn_auto::
 python 是2, python3 是3. 2下的模块3是用不到的。安装python3-pip获得pip3
 No module named 'seleniumrequests'
+pip install 并无提示是否已安装，但可以从是否有downloading看出 -- pip install & apt install  pytest完全不同
+
 
 2017年02月13日 
 appium是使用node.js里的npm安装的，再看一下JS
