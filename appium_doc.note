@@ -1,19 +1,26 @@
+appium/python-client  README.md::
+fully compliant with the Selenium 3.0 specification draft. The majority of the usage remains as it has been for Selenium 2 (WebDriver), and as the official Selenium Python bindings begins to implement the new specification that implementation will be used underneath, so test code can be written that is utilizable with both bindings.
+instead of including the Selenium webdriver module, use that from Appium instead.
+
+elements in  Android  to be found using recursive element search using the UIAutomator library. 
+elements to be found using the "Accessibility ID". take a string representing the accessibility id or label attached to a given element, e.g., for iOS the accessibility identifier and for Android the content-description. 
+
 ===appium/docs/cn/contributing-to-appium/developers-overview.md 
-take all the different useful automation engines and smooth away their differences and gotchas by making Appium drivers for them and bringing them under the umbrella of Appium itself. very similar to the goal of the Selenium project. 
+take different useful automation engines and smooth away their differences and gotchas by making Appium drivers for them and bringing them under the umbrella of Appium itself. very similar to the goal of the Selenium project. 
 
 have every driver be an independent entity (separate repo, tests, etc...) even as it uses shared libraries that make the development of an Appium driver as simple and boilerplate-free as possible. 
 use modern JavaScript because JavaScript is everywhere and easy for many developers to understand and contribute back to.
 
 Appium team runs development according to a very lightweight version of SCRUM. Every two weeks we begin a new "sprint".
-During the sprint, we update each other with daily progress in the `#standup` room in our [Appium Slack Group](https://appium.slack.com). At the end of the sprint, to celebrate our accomplishments and reflect on how things went, we hold a "retrospective", which might result in
+During the sprint, update each other with daily progress in the `#standup` room in our [Appium Slack Group](https://appium.slack.com). At the end of the sprint, to celebrate our accomplishments and reflect on how things went, we hold a "retrospective", which might result in
 a list of things we can try differently or do better next time around.
 
 For project management, use [ZenHub](http://zenhub.com) browser plugin, adds various features like Kanban boards and Epics to GitHub interface.
 
-Appium is a collection of [node.js](http://nodejs.org) packages that combine to form a running node.js server.  
+Appium is a collection of [node.js] packages that combine to form a running node.js server.  
 Some packages (like `appium-ios-driver`) are large and add significant functionality to Appium, others play a support role.
 
-Appium is written in a new form of JavaScript, called ES6 (or now ES2015). this version of the language is not yet supported natively by older
+Appium is written in a new form of JavaScript, called ES6 (or now ES2015). this version is not yet supported natively by older
 versions of node.js, Appium code is _transpiled_ to ES5 (the morewidely-supported version of JS).
 
 submit a PR to one of our repos and engage with the maintainers in the review process. 
@@ -35,10 +42,10 @@ gulp.md::
 
 
 ===appium/docs/cn/writing-running-appium/touch-actions.md 
-Selenium WebDriver spec support for certain kinds of mobile interaction, its parameters are not always easily mappable to the functionality
+WebDriver spec support for certain kinds of mobile interaction, its parameters are not always easily mappable to the functionality
 that the underlying device automation (like UIAutomation in the case of iOS) provides. 
 Appium implements the new TouchAction / MultiAction API defined in the newest version of the spec
-this is different from the earlier version of the TouchAction API in the original JSON Wire Protocol.
+different from the earlier version of the TouchAction API in the original JSON Wire Protocol.
 
 These APIs allow you to build up arbitrary gestures with multiple actuators.
 see Appium client docs for your language in order to find examples of using this API.
@@ -55,6 +62,34 @@ Test packages produced are now APKs. Previously, UIAutomator produced .jar or .z
 original version of UiAutomator ran as a shell program: ```adb shell uiautomator runtest ...```
 UiAutomator 2 is based on Android Instrumentation. Tests are compiled to APKs, run in an application process: ```adb shell am instrument ...```
 
+running-tests.md::
+Sometimes `adb` gets stuck. restart it: adb kill-server && adb devices
+adb shell dumpsys window windows | grep mFocusedApp  --check ur phone focued window to find what to test
+# python
+{
+    'platformName': 'Android',
+    'platformVersion': '4.4',
+    'deviceName': 'Android Emulator',
+    'app': myApp
+}
+`myApp`: * A local absolute path to your .apk or a .zip of it...
+set the remote session to use these capabilities and connect to the server running at port 4723 of localhost. You should be all set now!
+
+Android devices before version 4.2 (API Level 17) do not have Google's [UiAutomator framework] installed. 
+For earlier devices or tests of hybrid (webview-based) apps, Appium comes bundled with another automation backend called [Selendroid].
+One of the downsides: its API differs sometimes significantly with Appium's. thoroughly read [Selendroid's documentation] 
+
+start point: appium/sample-code/examples/python
+***
+README::
+suggested use a test runner such as pytest or nose.
+sudo apt install python-pip
+pip install Appium-Python-Client/pytest
+pytest android_simple_test.py  --how to find element effectively... 
+
+都知道界面自动化的维护成本大的问题，ios这块感觉更为突出，使用Appium Inspector查看控件时，很少有控件id，并且name属性开发也可以随意更改，value和label也不靠谱，貌似暂时不变的只有xpath，但是使用xpath的危害写过自动化的人应该都知道。目前我们的项目写的自动化case，基本上都是xpath，在后续界面大改的时候，应该会死的比较惨
+
+*** 
 
 ===appium/docs/cn/appium-setup/android-hax-emulator.md ...md
 runs on an Intel® cpu, check out HAXM. leverage your hardware for virtualization, accelerating the emulator.
@@ -88,7 +123,7 @@ Windows Application Driver supports testing Universal Windows Platform (UWP) and
 test UWP app, use any Selenium supported language and simply specify **Application Id** for the app under test in the **app** capabilities entry.
 When testing the application you authored yourself, find the **Application Id** in the generetated `AppX\vs.appxrecipe` file under `RegisteredUserNmodeAppID` node. E.g. ```c24c8163-548e-4b84-a466-530178fc0580_scyf5npe3hv32!App
 To test a classic Windows app, specify the **full executable path** for the app under test in the **app** capabilities entry.
-Windows SDK provides great tool to inspect the application you are testing. see every UI element/node that you can query using Windows Application Driver. This **inspect.exe** tool can be found under the Windows SDK folder such as `C:\Program Files (x86)\Windows Kits\10\bin\x86`
+Windows SDK provides tool to inspect the application. see every UI element/node that you can query using Windows Application Driver.  **inspect.exe** tool can be found under the Windows SDK folder such as `C:\Program Files (x86)\Windows Kits\10\bin\x86`
 
 ===docs/en/about-appium/intro.md
 #NOT do anything to be-tested APP

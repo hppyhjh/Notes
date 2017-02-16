@@ -1,3 +1,15 @@
+
+2017年02月16日 
+对于在界面上定位的繁琐枯燥的调试感到悲观，怀疑其意义
+已完成基础：+定位登录，并点击  基于android_simple.py
+然后移步框架 appiumn_auto
+tools/uiautomatorviewer
+aapt d badging com.yitong.mbank.jjccb.1701201638.apk
+
+appiumn_auto::
+python 是2, python3 是3. 2下的模块3是用不到的。安装python3-pip获得pip3
+No module named 'seleniumrequests'
+
 2017年02月13日 
 appium是使用node.js里的npm安装的，再看一下JS
 AS只能用于android开发，回头看android开发
@@ -16,7 +28,7 @@ Instant Run需要安装目标平台版本。
 ---from windows in home
 adb devices -l
 UWYST8VOSOS4IB5L       device product:H30-T00 model:H30_T00 device:hwH30-T00
-UWYST8VOSOS4IB5L       no permissions (verify udev rules); see [http://developer.android.com/tools/device.html] usb:2-1   --solution:: chown root:root adb; chmod 4777 adb; adb kill-server; adb devices -l  --set user or group ID on execution (s)
+UWYST8VOSOS4IB5L       no permissions (verify udev rules); see [http://developer.android.com/tools/device.html] usb:2-1   --solution:: chown root:root adb; chmod 4777 adb or chmod a+s; adb kill-server; adb devices -l  --set user or group ID on execution (s)
 
 appium -a 127.0.0.1 -p 4723 -U UWYST8VOSOS4IB5L --no-reset
 
@@ -106,34 +118,3 @@ Appium Client是配合原生的webdriver来使用的，因此二者必须配合�
 C:\package\setuptools-7.0>pip install Appium-Python-Client
 
 第三步，通过Python编写自动化测试脚本。
-#coding=utf-8
-from appium import webdriver
-
-desired_caps = {}
-desired_caps['platformName'] = 'Android'
-desired_caps['platformVersion'] = '4.4.2'
-desired_caps['deviceName'] = 'Android Emulator'
-desired_caps['appPackage'] = 'com.android.calculator2'
-desired_caps['appActivity'] = '.Calculator'
-
-driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-
-driver.find_element_by_name("1").click()
-
-driver.find_element_by_name("5").click()
-
-driver.find_element_by_name("9").click()
-
-driver.find_element_by_name("delete").click()
-
-driver.find_element_by_name("9").click()
-
-driver.find_element_by_name("5").click()
-
-driver.find_element_by_name("+").click()
-
-driver.find_element_by_name("6").click()
-
-driver.find_element_by_name("=").click()
-
-driver.quit()

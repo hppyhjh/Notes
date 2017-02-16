@@ -35,9 +35,10 @@ openjdk9 -- Can not initialize cryptographic mechanism  --jdk8 will be ok
 1       add-ons/
 114     build-tools/
 156     platforms/
-16      platform-tools/
+16      platform-tools/  ---adb here
 1       temp/
 655     tools/
 
-
-
+程序 'adb' 已包含在下列软件包中：--ubuntu软件库里也有
+ * adb
+ * android-tools-adb
