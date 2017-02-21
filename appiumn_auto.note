@@ -1,13 +1,20 @@
 
 2017年02月17日 
-python 是2, python3 是3. 2下的模块3是用不到的。安装python3-pip获得pip3
+python是2, python3是3. 2下的模块3是用不了的。安装python3-pip获得pip3
 添加：sys.path.append(".")
-No module named 'seleniumrequests' -- pip3 install selenium-requests..schematics
-pip install 并无提示是否已安装，但可以从是否有downloading看出 -- pip install & apt install  pytest完全不同
+pip3 install selenium-requests..schematics
+pip install 并无提示是否已安装，从是否有downloading看出
+pip install & apt install  pytest完全不同
 名称大小写：1 Common-common 2 OperateFile.py-oper 
 
+配置：
 common/variable.py
-  HOST	
+  HOST	log文件（必须存在）
+devices.yaml:: config: 加--log-level 去-U
 
 代码里有../img/monkneyTest.apk，了解许久，应该没什么意思
+
+为什么：
+testRunner/runnerBase.py里appium_testcase会写死monkeyTest.apk? 同时selenium_testcase里写实chromedriver.exe
+operateElement.py lambda技术
 

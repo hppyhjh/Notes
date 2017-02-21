@@ -2,6 +2,9 @@
 xterm -fn -misc-fixed-medium-r-normal--18-120-100-100-c-90-iso10646-1  --中文不会有方块了
 sudo vi /etc/X11/app-defaults/XTerm  --修改*VT100.utf8Fonts.font和font5一样。看不懂这个字体的命名方式
 
+gsettings set org.gnome.desktop.media-handling automount false
+gsettings set org.gnome.desktop.media-handling automount-open false
+
 2017年01月20日 
 Nancy's computer... repeat appium setup & be familiar with git
 1.apt..git --clone

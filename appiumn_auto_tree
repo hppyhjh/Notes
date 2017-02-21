@@ -1,0 +1,87 @@
+
+├── channel_log.md  修改清单
+├── common
+│   ├── appPerformance.py
+│   ├── basePickle.py
+│   ├── baseRandom.py
+│   ├── dataToString.py
+│   ├── errorLog1.py
+│   ├── __init__.py
+│   ├── myserver.py
+│   ├── operateElement.py    查找、操作UI元素
+│   ├── operateFile.py
+│   ├── operateYaml.py       装载yaml文件
+│   ├── reportPhone.py
+│   ├── testLog.py
+│   ├── testLogScreen.py
+│   └── variable.py        变量配置
+├── devices.yaml           进程池配置，含设备，appium启动命令和参数；支持多设备并行
+├── email.ini
+├── img
+│   ├── com.yitong.mbank.jjccb.1701201638.apk
+│   ├── monkneyTest.apk
+│   ├── selenium-server-standalone-3.0.1.jar
+│   ├── t.apk
+├── log
+│   ├── collect.txt
+│   ├── crash.txt
+│   ├── info.txt
+│   └── init.txt
+├── mark.md
+├── r                  快捷启动
+├── README.md
+├── testBLL              业务逻辑层
+│   ├── adbCommon.py     对DAL封装
+│   ├── apkBase.py
+│   ├── appCase.py
+│   ├── email.py
+│   ├── __init__.py
+│   ├── phoneBase.py
+│   ├── report.py
+│   ├── server.py
+│   └── webCase.py
+├── testCase                         测试用例集合
+│   ├── Home.py
+│   ├── __init__.py
+│   ├── login.py
+│   ├── monkey.py                    具体的测试用例：指定apk,yaml
+│   ├── web
+│   │   ├── comment.py
+│   ├── work.py
+│   └── yaml
+│       ├── contact
+│       │   └── work.yaml
+│       ├── monkey
+│       │   ├── crash1.yaml
+│       │   ├── crash.yaml
+│       │   └── jj.yaml               用例的操作步骤配置
+│       ├── myinfo
+│       │   ├── home_feed.yaml
+│       │   ├── home_fist_open.yaml
+│       │   ├── home_login1.yaml
+│       │   └── home_login.yaml
+│       └── web
+│           └── my_comment.yaml
+├── testDAL              数据访问层
+│   ├── adbCommon.py     操作adb
+│   ├── apkBase.py
+│   ├── appCase.py       装载yaml文件-测试描述，执行用例步骤
+│   ├── email.py
+│   ├── GetReport.xlsx
+│   ├── __init__.py
+│   ├── phoneBase.py     访问手机属性和状态（如品牌/配置，如资源使用）(adb shell)
+│   ├── report.py
+│   ├── server.py        控制启动停止appium服务
+│   └── webCase.py
+├── testMode
+│   ├── appCase.py
+│   ├── email.py
+│   ├── __init__.py
+│   └── webCase.py
+└── testRunner
+    ├── GetReport.xlsx
+    ├── __init__.py
+    ├── report.xlsx
+    ├── runnerBase.py  单元测试用例管理
+    └── runner.py      入口：1检查设备连接、2启动WEB服务，appium服务、3启动测试进程池，对每个设备分发测试用例-测试用例并未配置化
+

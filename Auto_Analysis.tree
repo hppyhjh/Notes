@@ -1,0 +1,95 @@
+├── data
+│   ├── app.apk
+│   ├── appium_parameter.yaml     参数如appXX,unicodeKeyboard, resetXX,noReset
+│   ├── incidental
+│   │   ├── device_info.yaml      写入的设备列表
+│   │   ├── error.png
+│   │   └── test.db               sqlite.存放资源使用率信息
+│   ├── minicap
+│   │   ├── bin
+│   │   │   ├── arm64-v8a         CPU类型
+│   │   │   │   ├── minicap
+│   │   │   │   └── minicap-nopie
+│   │   │   ├── armeabi-v7a
+│   │   │   ├── x86
+│   │   │   └── x86_64
+│   │   ├── minitouch
+│   │   │   ├── arm64-v8a
+│   │   │   │   ├── minitouch
+│   │   │   │   └── minitouch-nopie
+│   │   │   ├── armeabi
+│   │   │   ├── armeabi-v7a
+│   │   │   ├── mips
+│   │   │   ├── mips64
+│   │   │   ├── x86
+│   │   │   └── x86_64
+│   │   └── shared
+│   │       ├── android-10                SDK版本
+│   │       │   └── armeabi-v7a
+│   │       │       └── minicap.so
+│   │       ├── android-14
+│   │       │   ├── armeabi-v7a
+│   │       │   └── x86
+│   │       ├── android-15
+│   │       │   ├── armeabi-v7a
+│   │       │   └── x86
+│   │       ├── android-16
+│   │       ├── android-17
+│   │       ├── android-18
+│   │       ├── android-19
+│   │       ├── android-21
+│   │       │   ├── arm64-v8a
+│   │       │   ├── armeabi-v7a
+│   │       │   ├── x86
+│   │       │   └── x86_64
+│   │       ├── android-22
+│   │       ├── android-9
+│   │       │   └── armeabi-v7a
+│   │       └── android-M
+│   │           ├── arm64-v8a
+│   │           ├── armeabi-v7a
+│   │           ├── x86
+│   │           └── x86_64
+│   └── test_info.ini       主配置文件（分节）：用例、结果目录/APK路径/包名
+├── demo_run.py             执行入口，检查环境，配置主配置文件（代码）
+├── doc
+│   ├── appium_wiki.md
+│   ├── controls_operations.md
+│   ├── parameter_configuration.md
+│   ├── run.md
+│   ├── test_case_writing.md
+│   ├── test_report.md
+│   └── update_log.md
+├── __init__.py
+├── lib                       工具库
+│   ├── adbUtils.py           检查ANDROID_HOME环境变量，处理adb操作（安装，logcat，资源使用等）
+│   ├── __init__.py
+│   ├── ScreenShot.py         用minicap截图
+│   └── Utils.py              含日志类、执行系统命令、配置文件读取、Sqlite
+├── LICENSE
+├── po
+│   ├── BasePage.py                封装webdriver操作，含截图
+│   ├── ExecuteCase.py             分析用例，执行用例的各个动作
+│   ├── __init__.py
+│   └── integration.py             组合设备和appium参数；把测试跑起来，记录结果
+├── public                         公用功能
+│   ├── Analyzelog.py              过滤Log文件
+│   ├── CheckEnvironment.py        检查appium已安装，设备已连接
+│   ├── CleanProcess.py
+│   ├── GenerateReports.py         生成报告
+│   ├── GetCase.py                 获得用例文件
+│   ├── GetDevice.py               获取连接设备列表，写入设备信息（yaml文件）
+│   ├── GetFilePath.py             获得目录下指定类型的文件路径
+│   ├── GetHtml.py
+│   ├── GetLog.py                  将logcat记录到结果目录的log文件
+│   ├── __init__.py
+│   ├── installApp.py              安装APP，记录进度并检查
+│   ├── Performance.py
+│   └── StartAppium.py             启动appium检查启动输出（随机端口）
+├── README.md              本项目简介，使用说明
+├── run.py                 运行多设备整体测试
+├── setup.py               依赖模块安装 
+└── testcase               存放用例
+    └── login
+        ├── login1.yaml
+        └── login.yaml

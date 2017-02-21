@@ -1,0 +1,13 @@
+2017年02月20日 
+python setup.py install 要加sudo. 
+下载matplotlib-2.0.0.tar.gz 51M，很慢没提示，以为挂了
+
+修改pipy源~/.pip/pip.conf 用pip安装matplotlib等setup.py(很快）
+执行python setup.py install(源没变)，检查通过，不再下载
+
+为什么安装APK的过程中，还要处理点击？
+py里的dict
+
+对比：
+Auto_Analysis    不需要指定设备ID|支持多OS
+Appiumn_...      需要           |只WIN需修改
