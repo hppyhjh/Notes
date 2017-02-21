@@ -1,3 +1,5 @@
+2017年02月21日 
+移步auto_analysis,完整流程试用成功。优于appiumn_auto.
 
 2017年02月16日 
 对于在界面上定位的繁琐枯燥的调试感到悲观，怀疑其意义
@@ -89,28 +91,23 @@ android-studio-bundle-145.3330264-windows.exe 1.6G. 版本2.2.2 不需要再下�
 androiddevtools.cn  国内站，提供的链接有些版本已失效。
 
 wiki:
-Appium won the 2014 Bossie award of InfoWord about the best open source desktop and mobile software.
-Appium was selectioned as an Open Source Rookie of the Year by Black Duck Software.
+Appium won 2014 Bossie award of InfoWord about the best open source desktop and mobile software.
+Appium selectioned as an Open Source Rookie of the Year by Black Duck Software.
 
 Selenium originally developed by Jason Huggins in 2004 as an internal tool at ThoughtWorks.
 In 2007, Huggins joined Google. Together with others like Jennifer Bevan, he continued with the development and stabilization of Selenium RC. 
 same time, Simon Stewart at ThoughtWorks developed a superior browser automation tool called WebDriver. 
-In 2009, after a meeting at the Google Test Automation Conference, it was decided to merge the two projects, call the new project Selenium WebDriver, or Selenium 2.0.
+In 2009, after meeting at Google Test Automation Conference, it was decided to merge two projects, call Selenium WebDriver, or Selenium 2.0.
 
-Selenium WebDriver is the successor to Selenium RC. accepts commands (sent in Selenese, or via a Client API) and sends them to a browser. 
-implemented through a browser-specific browser driver, which sends commands to a browser, and retrieves results. 
+Selenium WebDriver is successor to Selenium RC. accepts commands (sent in Selenese, or via a Client API) and sends them to a browser. 
+implemented through browser-specific browser driver, which sends commands to a browser, and retrieves results. 
 Most browser drivers actually launch and access a browser application (such as Firefox or Internet Explorer); 
 there is also an HtmlUnit browser driver, which simulates a browser using HtmlUnit.
 
 ==虫师摘要
-D:\Users\Pactera\AppData\Local\Android\sdk %ANDROID_HOME%
 环境变量 ANDROID_HOME & PATH（android sdk & appium) 
 
-安装SDK System images 
 创建模拟器时需要的system image，也就是在创建模拟器时 CPU/ABI项需要选择的
 
 Appium Client是配合原生的webdriver来使用的，因此二者必须配合使用缺一不可。
-截止作者发稿，最新版本为Python2.7.10版本。
 C:\package\setuptools-7.0>pip install Appium-Python-Client
-
-第三步，通过Python编写自动化测试脚本。
