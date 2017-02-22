@@ -52,17 +52,17 @@ appium的hello world
 
 ---------
 2017年01月10日 
-error: Appium will not work if used or installed with sudo. Please rerun/install as a non-root user. If had to install Appium using `sudo npm install -g appium`, solution is to reinstall Node using a method (Homebrew, for example) that doesn't require sudo to install global npm packages.
+Appium will not work if used or installed with sudo. Please rerun/install as a non-root user. If had to install Appium using `sudo npm install -g appium`, solution is to reinstall Node using a method (Homebrew, for example) that doesn't require sudo to install global npm packages.
 
 https://nodejs.org/download/release/  找的2016.6月的版本
-hjh@hjh:~/devtool/node-v6.2.2-linux-x64/bin$ ./node -v
-v6.2.2
-hjh@hjh:~/devtool/node-v6.2.2-linux-x64/bin$ export PATH=.:$PATH; npm -v
-3.9.5
+hjh@hjh:~/devtool/node-v6.2.2-linux-x64/bin$ 
+./node -v  -> v6.2.2
+export PATH=.:$PATH; npm -v -> 3.9.5
 
 #直接安装慢，用taobao mirror
-hjh@hjh:~$ npm install cnpm -g --registry=https://registry.npm.taobao.org  --感觉装了好多东西
-hjh@hjh:~$ cnpm install -g appium  --有截屏
+hjh@hjh:~$ 
+npm install cnpm -g --registry=https://registry.npm.taobao.org  --感觉装了好多东西
+cnpm install -g appium  --有截屏
 appium可运行
 
 ---------

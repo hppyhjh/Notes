@@ -1,6 +1,8 @@
+2017/2/22
+从github上download zip小，而clone会大很多，因为包含了.git历史版本
+
 2017年02月16日 
 git clone appium_auto.. total 116M, but .git 64M...why
-
 
 fork testerhome：https://github.com/testerhome/appium.git   (appium V1.6.3)
 翻译自己认领的文档，提交到fork的库，在发起 pull request。

@@ -1,0 +1,21 @@
+2017/2/22 in win7
+powered by Node.js, uses  W3C WebDriver API  (formly Selenium WebDriver.) #有自己网站，信息比git上详细
+aims to simplify process of setting up Continuous Integration and writing automated tests. 
+
+works with the Selenium standalone server 下载2.X最新版selenium-server-standalone-2.53.1.jar @https://selenium-release.storage.googleapis.com
+npm install nightwatch  卡在isarray，换taobao源OK。--直接放到执行命令的目录下了,maybe -g?
+The most common WebDriver implementation is the Selenium Server.
+
+Starting with Selenium 3, FirefoxDriver is no longer included in package. starting with version 48, Firefox is no longer compatible with FirefoxDriver which is shipped with Selenium 2.x. 
+Firefox users are advised to use GeckoDriver for their testing. For more info, refer to the browser setup section.
+
+bin/nightwatch.json --the config file
+support for Internet Explorer. have to download IE Driver binary. specify browser name: 'internet explorer' .@同selenium地址
+
+key of the settings group can be passed then to the runner as the --env argument
+
+Microsoft WebDriver: standalone server implements W3C WebDriver wire protocol for the Edge browser. supported by Windows 10 and onwards.
+
+Unable to find elements on closed window..on IE11 of WIN7 x64
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BFCACHE]
+"iexplore.exe"=dword:00000000  --will be ok
