@@ -1,0 +1,16 @@
+20170222
+Gecco: lightweight web crawler developed with java.
+integriert jsoup, httpclient, fastjson, spring, htmlunit, redission ausgezeichneten framework,
+configure a number of jQuery style selector can be very quick to write a crawler.
+
+maven:
+generating project in interactive mode  --超级慢 网络原因 耐心 列出1779个 有意思吗
+-DarchetypeCatalog=internal 就少很多 找maven-archetype-quickstart 也是有的，但POM还是网上下载 项目目录在执行目录下
+
+mvn archetype:generate -DgroupId=com.mycompany.helloworld -DartifactId=helloworld -Dpackage=com.mycompany.helloworld -Dversion=1.0-SNAPSHOT -DarchetypeCatalog=internal
+mvn package
+    <dependency>
+      <groupId>com.geccocrawler</groupId>
+      <artifactId>gecco</artifactId>
+      <version>1.2.6</version>
+    </dependency>
