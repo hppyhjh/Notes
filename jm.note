@@ -1,0 +1,9 @@
+2017年02月23日 
+response assertion. then Beanshell post processor looks to see if previous sampler was an error (!prev.isSuccessfull()). not working because response for isSuccessfull() is coming back as true even though the sampler failed due to the assertion. --exactly as my ques.
+Ans:
+assertions are executed after PostProcessors therefore PostProcessor knows nothing about assertion failures. 
+prev.getResponseDataAsString().contains('xxx) -- or use PreProcessor of next Element
+
+ctx.setRestartNextLoop(true); --skip this iteration, continue next...alternative 'Test Action'
+
+prev是SampleResult类型 sampler是Sampler类型

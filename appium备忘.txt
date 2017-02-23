@@ -1,3 +1,9 @@
+2017年02月23日 
+想查看手册，appium API的。想找Appium-Python-Client的安装的文件列表，但apt里没有，应是Pip安装的
+dpkg -L openjdk-8-jdk-headless  --列出files in package.. /var/cache/apt/archives/
+pip list -> pip show --files Appium-Python-Client  --没有API文档
+请看writing-running-appium/caps.md
+
 2017年02月21日 
 移步auto_analysis,完整流程试用成功。优于appiumn_auto.
 
@@ -31,16 +37,13 @@ UWYST8VOSOS4IB5L       no permissions (verify udev rules); see [http://developer
 appium -a 127.0.0.1 -p 4723 -U UWYST8VOSOS4IB5L --no-reset
 
 Successfully installed Appium-Python-Client-0.24 selenium-3.0.2
-https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi
+python-2.7.13.amd64.msi
 
 > Launching Appium server with command: D:\Program Files (x86)\Appium\node.exe lib\server\main.js --address 127.0.0.1 --port 4723 --platform-name Android --platform-version 23 --automation-name Appium --log-no-color
 
 > info: [debug] 1 device(s) connected
 
 > info: [debug] executing cmd: D:\Users\Pactera\AppData\Local\Android\sdk\platform-tools\adb.exe -s UWYST8VOSOS4IB5L forward tcp:4724 tcp:4724
-> info: [debug] Pushing appium bootstrap to device...
-> info: [debug] [BOOTSTRAP] [debug] Socket opened on port 4724
-> info: [debug] [BOOTSTRAP] [debug] Appium Socket Server Ready
 
 > info: [debug] executing cmd: D:\Users\Pactera\AppData\Local\Android\sdk\platform-tools\adb.exe -s UWYST8VOSOS4IB5L shell "am start -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000 -n com.android.calculator2/.Calculator"
 > info: [debug] Waiting for pkg "com.android.calculator2" and activity ".Calculator" to be focused

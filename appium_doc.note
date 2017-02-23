@@ -1,5 +1,5 @@
 appium/python-client  README.md::
-fully compliant with the Selenium 3.0 specification draft. The majority of the usage remains as it has been for Selenium 2 (WebDriver), and as the official Selenium Python bindings begins to implement the new specification that implementation will be used underneath, so test code can be written that is utilizable with both bindings.
+fully compliant with Selenium 3.0 specification draft. majority of usage remains as it has been for Selenium 2 (WebDriver), and as the official Selenium Python bindings begins to implement the new specification that implementation will be used underneath, so test code can be written that is utilizable with both bindings.
 instead of including the Selenium webdriver module, use that from Appium instead.
 
 elements in  Android  to be found using recursive element search using the UIAutomator library. 
